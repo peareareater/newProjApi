@@ -1,0 +1,25 @@
+{
+  "name": "newprojapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "pm2 start index.js --watch && pm logs",
+    "stop": "pm2 stop index.js",
+    "restart": "pm2 restart index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peareareater/newProjApi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peareareater/newProjApi/issues"
+  },
+  "homepage": "https://github.com/peareareater/newProjApi#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "redis": "^3.0.2"
+  }
+}
