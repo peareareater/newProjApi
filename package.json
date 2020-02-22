@@ -20,6 +20,7 @@
   "homepage": "https://github.com/peareareater/newProjApi#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "mongoose": "^5.9.2",
     "redis": "^3.0.2"
   }
 }

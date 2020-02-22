@@ -1,9 +1,19 @@
-const { port, app } = require('./constants');
+const express = require('express');
+const mongoose = require('mongoose');
+const routes = require('./routes');
 
-const auth = require('./routes/auth');
+mongoose.Promise = global.Promise;
 
-app.listen(port, () => {
-  console.log(`Server is listening on port: ${port}`);
-});
+const app = express();
 
-app.use(auth);
+app.use('/routes', routes);
+mongoose.connect('mongodb://localhost:27017/db', {useNewUrlParser: true, useUnifiedTopology: true})
+    .then(() => {
+        console.log('mongo started');
+        app.listen(8080, () => {
+            console.log('server started on 8080')
+        })
+    })
+    .catch(e => {
+        console.log('mongo connection failed with', e);
+    });
