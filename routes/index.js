@@ -1,11 +1,7 @@
-const express = require('express');
-const users = require('./users');
+const router = require('express').Router();
+const { errorHandler } = require('../helpers');
+router.use('/user', require('./users'));
 
-
-const router = express.Router();
-
-router.use(express.json());
-
-router.use('/users', users);
+router.use(errorHandler);
 
 module.exports = router;
