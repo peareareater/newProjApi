@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --watch && pm2 logs",
-    "stop": "pm2 stop index.js",
+    "start": "pm2 start index.js --watch logs",
+    "stop": "pm2 stop  0 --watch index.js",
     "restart": "pm2 restart index.js"
   },
   "repository": {

@@ -1,9 +1,20 @@
+const {authError} = require("../constants/user");
+
 const userService = require('../service/user');
 
 
 function authenticate(req, res, next) {
     userService.authenticate(req.body)
-        .then(user => user ? res.json(user) : res.status(400).json({message: 'Username or password is incorrect'}))
+        .then(user => {
+            if (user) {
+                return res.json(user)
+            } else {
+                return res.status(400).json({
+                    message: 'Username or password is incorrect',
+                    ...authError
+                });
+            }
+        })
         .catch(err => next(err));
 }
 

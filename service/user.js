@@ -40,6 +40,7 @@ async function create(userParam) {
 function remove(id) {
     User.findByIdAndRemove(id);
 }
+
 module.exports = {
     authenticate,
     getAll,
